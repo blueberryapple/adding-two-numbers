@@ -29,15 +29,6 @@ public class ListNode {
     }
 
     public static Stack<ListNode> getStackFromSum(int sum) {
-        switch(sum) {
-            case 0:
-            case 1:
-                Stack<ListNode> result = new Stack<>();
-                result.push(new ListNode(sum));
-                return result;
-            default:
-        }
-
         int numberOfNodes = (int) Math.ceil(Math.log10(sum + 1));
         Stack<ListNode> nodeStack = new Stack<>();
 
