@@ -22,6 +22,15 @@ public class TestSolution {
         testSum(999, 1);
         testSum(1164, 70);
         testSum(20999, 1);
+        testSum(Integer.MAX_VALUE - 2, 1);
+        testSum(Integer.MAX_VALUE - 1, 0);
+        testSum(Integer.MAX_VALUE / 2, Integer.MAX_VALUE / 3);
+
+        for (int i = 0; i < 1000; i++) {
+            for (int j = 0; j < 1000; j++) {
+                testSum(i, j);
+            }
+        }
     }
 
     private void testSum(int summand1, int summand2) {
