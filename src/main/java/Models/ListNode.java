@@ -12,12 +12,13 @@ public class ListNode {
     }
 
     public int toInt() {
-        ListNode nextNode;
-        int i = 0;
-        int result = 0;
-        while (next != null) {
-            result += next.val * Math.pow(10, i);
+        ListNode nextNode = next;
+        int i = 1;
+        int result = val;
+        while (nextNode != null) {
+            result += nextNode.val * Math.pow(10, i);
             i++;
+            nextNode = nextNode.next;
         }
         return result;
     }
@@ -50,8 +51,14 @@ public class ListNode {
         return nodeStack;
     }
 
+    // ex. extractDigitFromPlace(9516, 2)
+    // onePlaceOff = 10^1 = 10
+    // return (9516 % 100 - 9516 % 10) / 10 = (16 - 6) / 10
+    //                                      = 10 / 10
+    //                                      = 1.
     private static int extractDigitFromPlace(int sum, int i) {
-        return (int) ((sum % (int) Math.pow(10, i) - sum % Math.pow(10, i - 1)) / (Math.pow(10, i-1)));
+        double onePlaceOff = Math.pow(10, i - 1);
+        return (int) ((sum % (int) Math.pow(10, i) - sum % onePlaceOff) / onePlaceOff);
     }
 
     public static ListNode getListNodeFromStack(Stack<ListNode> nodeStack) {

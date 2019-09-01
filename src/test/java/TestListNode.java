@@ -70,4 +70,35 @@ public class TestListNode {
                 node
         );
     }
+
+    @Test
+    public void testListNodeToInt() {
+        ListNode listNode = new ListNode(5);
+        Assert.assertEquals(
+                5,
+                listNode.toInt()
+        );
+
+        listNode = new ListNode(0);
+        listNode.next = new ListNode(0);
+        listNode.next.next = new ListNode(1);
+        Assert.assertEquals(
+                100,
+                listNode.toInt()
+        );
+
+        listNode = new ListNode(5);
+        listNode.next = new ListNode(6);
+        listNode.next.next = new ListNode(9);
+        Assert.assertEquals(
+                965,
+                listNode.toInt()
+        );
+
+        listNode = new ListNode(0);
+        Assert.assertEquals(
+                0,
+                listNode.toInt()
+        );
+    }
 }
