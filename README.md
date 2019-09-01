@@ -6,3 +6,8 @@ My solution for the adding two numbers problem on leetcode.
 2. 99.69 percentile in memory usage
 3. 100% class code coverage
 4. 98% line code coverage (everything but the `hashCode` method)
+
+## making sure it works
+```sh
+./gradlew test
+```
